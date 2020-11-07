@@ -1,0 +1,115 @@
+{
+    "cricket" : {
+        "questions" : [
+            {
+                "qid" : 1,
+                "name" : "Who is the best batsmen in the history of circket?",
+                "options" : [
+                    {
+                        "qid" : 1,
+                        "value" : "Sachin Tendulkar",
+                        "answer" : true
+                    },
+                    {
+                        "qid" : 1,
+                        "value" : "Sachin Tendulkar",
+                        "answer" : true
+                    },
+                    {
+                        "qid" : 1,
+                        "value" : "Sachin Tendulkar",
+                        "answer" : true
+                    },
+                    {
+                        "qid" : 1,
+                        "value" : "Sachin Tendulkar",
+                        "answer" : true
+                    }
+                ],
+                "correct_answer" : "Sachin Tendulkar"
+            },
+            {
+                "qid" : 2,
+                "name" : "Which team has won the most number of world cups?",
+                "options" : [
+                    {
+                        "qid" : 2,
+                        "value" : "India",
+                        "answer" : false
+                    },
+                    {
+                        "qid" : 2,
+                        "value" : "West Indies",
+                        "answer" : false
+                    },
+                    {
+                        "qid" : 3,
+                        "value" : "Australia",
+                        "answer" : true
+                    },
+                    {
+                        "qid" : 4,
+                        "value" : "England",
+                        "answer" : false
+                    }
+                ],
+                "correct_answer" : "Australia"
+            },
+            {
+                "qid" : 3,
+                "name" : "Who was India's leading wicket taker in the 2011 World cup?",
+                "options" : [
+                    {
+                        "qid" : 3,
+                        "value" : "RP Singh",
+                        "answer" : false
+                    },
+                    {
+                        "qid" : 3,
+                        "value" : "Zaheer Khan",
+                        "answer" : true
+                    },
+                    {
+                        "qid" : 3,
+                        "value" : "Ishant Sharma",
+                        "answer" : false
+                    },
+                    {
+                        "qid" : 3,
+                        "value" : "Ashish Nehra",
+                        "answer" : false
+                    }
+                ],
+                "correct_answer" : "Zaheer Khan"
+            },
+            {
+                "qid" : 4,
+                "name" : "__________ is the only batsman to have a batting average of 99.99",
+                "options" : [
+                    {
+                        "qid" : 4,
+                        "value" : "Ian Chappell",
+                        "answer" : false
+                    },
+                    {
+                        "qid" : 4,
+                        "value" : "Steve Waugh",
+                        "answer" : false
+                    },
+                    {
+                        "qid" : 4,
+                        "value" : "Sunil Gavaskar",
+                        "answer" : false
+                    },
+                    {
+                        "qid" : 4,
+                        "value" : "Donald Bradman",
+                        "answer" : true
+                    }
+                ],
+                "correct_answer" : "Donald Bradman"
+            }
+        ]
+    }
+    
+}
