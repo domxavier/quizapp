@@ -1,12 +1,12 @@
 export class Question {
     constructor(
-        public qid : number,
+        public correct_answer : string,
         public name : string, 
         public options : option[] = []
     ) {}
 }
 
-class option {
+export class option {
     constructor(
         public qid : number,
         public value : string,

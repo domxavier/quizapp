@@ -10,8 +10,8 @@ export class SoccerService {
 
   constructor(private http : HttpClient) { }
 
-  loadQuestions() : Observable<Question[]> {
-    return this.http.get<Question[]>("http://localhost:3001/soccer");
+  loadQuestions() : Observable<{}> {
+    return this.http.get("http://localhost:3001/soccer");
   }
 
 }

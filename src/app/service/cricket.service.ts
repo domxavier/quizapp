@@ -10,8 +10,8 @@ export class CricketService {
 
   constructor(private http : HttpClient) { }
 
-  loadQuestions() : Observable<Question[]> {
-    return this.http.get<Question[]>("http://localhost:3000/cricket");
+  loadQuestions() : Observable<{}> {
+    return this.http.get("http://localhost:3000/cricket");
   }
 
 }

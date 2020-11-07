@@ -1,8 +1,39 @@
-<p>cricket works!</p>
+<!-- <div class="container">
+    <div class="row row-content">
+        Question is {{this.name}}
+        Correct Answer is {{this.correct_answer}}
+        Options are :
+        <ul *ngFor="let op of options">
+            <li> {{ op.value }} </li>
+        </ul>
+        <hr><br>
+        <input type="button" value="Next" (click)="loadCricketQuestions()"/>
+        <br>
+    </div>
+</div> -->
 
-{{ cricket_questions }}
 <div class="container">
     <div class="row row-content">
-        
+        Question is {{this.cricket_questions.questions[this.i].name}}
+        Correct Answer is {{ this.cricket_questions.questions[this.i].correct_answer }}
+        Options are :
     </div>
+    <br>
+    <div class="row row-content">
+        <ul *ngFor="let op of this.cricket_questions.questions[this.i].options">
+            <div class="col-12">
+                <li> {{ op.value }} </li>
+            </div>
+        </ul>
+    </div>
+    <br>
+
+    <div class="row row-content col-sm-6" *ngIf="next_button_flag" style="padding-top: 2px; padding-bottom: 2px;">
+        <input type="button" class="btn btn-success" value="Next" (click)="loadNextQuestion()"/>
+        <br>
+    </div>
+    <div class="row row-content col-sm-6" *ngIf="previous_button_flag" style="padding-top: 2px; padding-bottom: 2px;">
+        <input type="button" class="btn btn-danger" value="Previous" (click)="loadPreviousQuestion()"/>
+    </div>
+
 </div>

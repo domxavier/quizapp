@@ -1,8 +1,25 @@
-<p>soccer works!</p>
+<div class="container">
+    <div class="row row-content">
+        Question is {{this.soccer_questions.questions[this.i].name}}
+        Correct Answer is {{ this.soccer_questions.questions[this.i].correct_answer }}
+        Options are :
+    </div>
+    <br>
+    <div class="row row-content">
+        <ul *ngFor="let op of this.soccer_questions.questions[this.i].options">
+            <div class="col-12">
+                <li> {{ op.value }} </li>
+            </div>
+        </ul>
+    </div>
+    <br>
 
-<!-- <div *ngIf="flag">
+    <div class="row row-content col-sm-6" *ngIf="next_button_flag" style="padding-top: 2px; padding-bottom: 2px;">
+        <input type="button" class="btn btn-success" value="Next" (click)="loadNextQuestion()"/>
+        <br>
+    </div>
+    <div class="row row-content col-sm-6" *ngIf="previous_button_flag" style="padding-top: 2px; padding-bottom: 2px;">
+        <input type="button" class="btn btn-danger" value="Previous" (click)="loadPreviousQuestion()"/>
+    </div>
 
-</div> -->
-
-
-{{ soccer_questions }}
+</div>

@@ -9,8 +9,9 @@ import { SoccerService } from '../service/soccer.service';
 })
 export class SoccerComponent implements OnInit {
 
-  flag : boolean = true;
-  soccer_questions : Question[] = [];
+  next_button_flag : boolean = true;
+  previous_button_flag : boolean = false;
+  soccer_questions;
 
   constructor(private soccer_service : SoccerService) { }
 
@@ -18,16 +19,46 @@ export class SoccerComponent implements OnInit {
     this.soccer_service.loadQuestions().subscribe(
       data => this.soccer_questions = data,
       e => console.log(e),
-      () => console.log(this.soccer_questions)
+      () => console.log(this.soccer_questions.questions)
     )
   }
 
-  loadSoccerQuestions() {
-    this.soccer_service.loadQuestions().subscribe(
-      data => this.soccer_questions = data,
-      e => console.log(e),
-      () => console.log(this.soccer_questions)
-    )
+  i : number = 0;
+
+  loadNextQuestion() {
+    if(this.i < this.soccer_questions.questions.length) {
+      this.i++;
+    }
+    if(this.i == this.soccer_questions.questions.length-1 ) {
+      this.next_button_flag = false;
+    }
+
+    if(this.i == 0) {
+      this.previous_button_flag = false;
+    } 
+    if (this.i > 0) {
+      this.previous_button_flag = true;
+    }
+  }
+
+  loadPreviousQuestion() {
+    if(this.i > -1){
+      this.i--;
+    }
+
+    if(this.i == this.soccer_questions.questions.length-1 ) {
+      this.next_button_flag = false;
+    }
+    if(this.i <= this.soccer_questions.questions.length-1 ) {
+      this.next_button_flag = true;
+    }
+
+    if(this.i == 0) {
+      this.previous_button_flag = false;
+    } 
+    if (this.i > 0) {
+      this.previous_button_flag = true;
+    }
   }
 
 }
