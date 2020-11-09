@@ -1,17 +1,20 @@
-<div class="container">
-    <div class="row row-content">
-        Question is {{this.soccer_questions.questions[this.i].name}}
-        Correct Answer is {{ this.soccer_questions.questions[this.i].correct_answer }}
-        Options are :
+<div class="container"  *ngIf="quiz">
+    <h1>Soccer Quiz</h1>
+    <div class="jumbotron">
+        <div class="row row-content">
+            <h4>{{this.soccer_questions.questions[this.i].name}}</h4>
+        </div>
+        <br>
+        <div class="row row-content">
+            <ul *ngFor="let op of this.soccer_questions.questions[this.i].options">
+                <div class="col-12">
+                    <!-- <li> {{ op.value }} </li> -->
+                    <input type="radio" value="{{ op.value }}" name="{{ op.qid }}" [(ngModel)]="myAnswer"> {{ op.value }}
+                </div>
+            </ul>
+        </div>
     </div>
-    <br>
-    <div class="row row-content">
-        <ul *ngFor="let op of this.soccer_questions.questions[this.i].options">
-            <div class="col-12">
-                <li> {{ op.value }} </li>
-            </div>
-        </ul>
-    </div>
+    
     <br>
 
     <div class="row row-content col-sm-6" *ngIf="next_button_flag" style="padding-top: 2px; padding-bottom: 2px;">
@@ -21,5 +24,31 @@
     <div class="row row-content col-sm-6" *ngIf="previous_button_flag" style="padding-top: 2px; padding-bottom: 2px;">
         <input type="button" class="btn btn-danger" value="Previous" (click)="loadPreviousQuestion()"/>
     </div>
+    <br>
+    <div class="row row-content col-12" style="padding-top: 2px; padding-bottom: 2px;">
+        <input type="button" class="btn btn-primary" name="" value="Submit Quiz" (click)="submitQuiz()">
+    </div>
+</div>
 
+<div class="container" *ngIf="results">
+    <h1>Soccer Quiz</h1>
+    <div class="row row-content" *ngFor="let question of this.soccer_questions.questions">
+        <div class="jumbotron col-12">
+            <div class="row row-content col-12" style="padding-left: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px;">
+                <h4>{{ question.name }}</h4>
+            </div>
+            <div class="row row-content col-12">
+                <div *ngIf="question.correct_answer === question.selected_answer; else elseBlock" style="background-color: darkseagreen;">
+                    <b>{{ question.correct_answer }}</b>
+                </div>
+                <ng-template #elseBlock>
+                    <div style="background-color: indianred;">
+                        <b>{{ question.correct_answer }}</b>
+                    </div>
+                </ng-template>
+                
+            </div>
+        </div>
+    </div>
+    <hr>
 </div>

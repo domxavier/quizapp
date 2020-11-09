@@ -26,7 +26,8 @@
                         "answer" : false
                     }
                 ],
-                "corrent_answer" : "Brazil"
+                "correct_answer" : "Brazil",
+                "selected_answer" : ""
             },
             {
                 "qid" : 7,
@@ -53,7 +54,8 @@
                         "answer" : false
                     }
                 ],
-                "corrent_answer" : "2006"
+                "correct_answer" : "2006",
+                "selected_answer" : ""
             },
             {
                 "qid" : 8,
@@ -80,9 +82,65 @@
                         "answer" : true
                     }
                 ],
-                "corrent_answer" : "Miroslav Klose"
+                "correct_answer" : "Miroslav Klose",
+                "selected_answer" : ""
+            },
+            {
+                "qid" : 9,
+                "name" : "Which country has appeared in three World Cup finals, but never won the competition?",
+                "options" : [
+                    {
+                        "qid" : 9,
+                        "value" : "England",
+                        "answer" : false
+                    },
+                    {
+                        "qid" : 9,
+                        "value" : "Argentina",
+                        "answer" : false
+                    },
+                    {
+                        "qid" : 9,
+                        "value" : "Uruguay",
+                        "answer" : false
+                    },
+                    {
+                        "qid" : 9,
+                        "value" : "Netherlands",
+                        "answer" : true
+                    }
+                ],
+                "correct_answer" : "Netherlands",
+                "selected_answer" : ""
+            },
+            {
+                "qid" : 10,
+                "name" : "Which country won the first ever World Cup in 1930?",
+                "options" : [
+                    {
+                        "qid" : 10,
+                        "value" : "Brazil",
+                        "answer" : false
+                    },
+                    {
+                        "qid" : 10,
+                        "value" : "Uruguay",
+                        "answer" : true
+                    },
+                    {
+                        "qid" : 10,
+                        "value" : "Germany",
+                        "answer" : true
+                    },
+                    {
+                        "qid" : 10,
+                        "value" : "France",
+                        "answer" : false
+                    }
+                ],
+                "correct_answer" : "Uruguay",
+                "selected_answer" : ""
             }
-    
         ] 
     }
 }

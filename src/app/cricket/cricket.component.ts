@@ -9,6 +9,9 @@ import { CricketService } from '../service/cricket.service';
 })
 export class CricketComponent implements OnInit {
 
+  myAnswer;
+  quiz : boolean = true;
+  results : boolean = false;
   next_button_flag : boolean = true;
   previous_button_flag : boolean = false;
   cricket_questions;
@@ -21,11 +24,14 @@ export class CricketComponent implements OnInit {
       e => console.log(e),
       () => console.log(this.cricket_questions.questions)
     )
+    
   }
   
   i : number = 0;
   
   loadNextQuestion() {
+    this.cricket_questions.questions[this.i].selected_answer = this.myAnswer;
+    console.log(this.cricket_questions.questions);
     if(this.i < this.cricket_questions.questions.length) {
       this.i++;
     }
@@ -39,9 +45,14 @@ export class CricketComponent implements OnInit {
     if (this.i > 0) {
       this.previous_button_flag = true;
     }
+
+    this.myAnswer = this.cricket_questions.questions[this.i].selected_answer;
+
   }
 
   loadPreviousQuestion() {
+    this.cricket_questions.questions[this.i].selected_answer = this.myAnswer;
+    console.log(this.cricket_questions.questions);
     if(this.i > -1){
       this.i--;
     }
@@ -59,8 +70,16 @@ export class CricketComponent implements OnInit {
     if (this.i > 0) {
       this.previous_button_flag = true;
     }
+
+    this.myAnswer = this.cricket_questions.questions[this.i].selected_answer;
   }
 
-  
+  submitQuiz() {
+    this.cricket_questions.questions[this.i].selected_answer = this.myAnswer;
+    // console.log("Quiz submitted")
+    this.quiz = false;
+    this.results = true;
+    console.log(this.cricket_questions.questions)
+  }
 
 }
